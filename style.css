@@ -1,0 +1,152 @@
+:root {
+    --primary-green: #4a7c59;
+    --bg-beige: #f4f1e8;
+    --accent-red: #d9534f;
+    --text-dark: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--bg-beige);
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+.container { max-width: 1100px; margin: 0 auto; width: 90%; }
+.center-text { text-align: center; }
+
+/* --- Section Spacing --- */
+.section { padding: 100px 0; min-height: 60vh; }
+
+/* --- Logo & Hero --- */
+.logo-img-large {
+    width: 250px; /* Made the logo much bigger */
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: 5px solid var(--primary-green);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.main-title { 
+    font-size: 4.5rem; 
+    color: var(--primary-green); 
+    letter-spacing: -1px; 
+    text-transform: uppercase;
+}
+
+.sub-motto { font-weight: 400; font-size: 1.8rem; margin-bottom: 10px; opacity: 0.8; }
+.hero-text { font-size: 1.4rem; font-weight: 600; color: var(--primary-green); }
+
+/* --- Impact Grid (Filling the Space) --- */
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.impact-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    border-bottom: 5px solid var(--primary-green);
+    transition: transform 0.3s ease;
+}
+
+.impact-card:hover { transform: translateY(-10px); }
+.impact-card h3 { color: var(--primary-green); margin-bottom: 15px; font-size: 1.8rem; }
+
+/* --- Mission Box --- */
+.mission-box {
+    background: white;
+    padding: 60px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.mission-points {
+    list-style: none;
+    display: inline-block;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.mission-points li { font-size: 1.2rem; margin-bottom: 20px; }
+
+/* --- Button --- */
+.btn-main {
+    display: inline-block;
+    background: var(--primary-green);
+    color: white;
+    padding: 20px 50px;
+    text-decoration: none;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    transition: 0.3s;
+}
+
+/* --- Contributor Section Styling --- */
+.contributor-section {
+    background-color: #ffffff; /* White background to separate it from the beige sections */
+    padding: 100px 0;
+}
+
+.contributor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.contributor-card {
+    padding: 35px;
+    background-color: var(--bg-beige); /* Light beige card background */
+    border-radius: 15px;
+    text-align: left;
+    position: relative;
+    border-left: 6px solid var(--primary-green);
+    transition: all 0.3s ease;
+}
+
+.contributor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.action-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.contributor-card h3 {
+    color: var(--primary-green);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.contributor-card p {
+    font-size: 1.05rem;
+    color: #555;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .contributor-grid { grid-template-columns: 1fr; }
+}
+
+.btn-main:hover { background: #3a6347; transform: scale(1.05); }
+
+/* --- Animations --- */
+.reveal { opacity: 0; transform: translateY(40px); transition: 1s all ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
